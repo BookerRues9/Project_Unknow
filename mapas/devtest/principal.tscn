@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://cu8od3ycevd61"]
+
+[ext_resource type="PackedScene" uid="uid://bpjevy84k8tqa" path="res://entidades/camara.tscn" id="1_5pxp1"]
+[ext_resource type="Texture2D" uid="uid://bffldjq3r3lcu" path="res://texturas/default/default2.png" id="1_mgkhq"]
+[ext_resource type="PackedScene" uid="uid://48nijan6xo5p" path="res://entidades/player.tscn" id="2_rvtnt"]
+[ext_resource type="PackedScene" uid="uid://dv6q2w4ist1ju" path="res://entidades/trigger.tscn" id="3_gynv6"]
+[ext_resource type="PackedScene" uid="uid://cfuo7ekp5nis7" path="res://entidades/dev/UI/DebugUI.tscn" id="6_tcmp5"]
+[ext_resource type="PackedScene" uid="uid://dfh41kk4wkn7f" path="res://entidades/npc.tscn" id="7_cblfr"]
+[ext_resource type="PackedScene" uid="uid://bjnry3jbxa7b7" path="res://entidades/door.tscn" id="8_xxujv"]
+[ext_resource type="PackedScene" uid="uid://x1y8alj444a2" path="res://models/notebook/notebook_low.glb" id="9_ceyob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgkhq"]
+albedo_texture = ExtResource("1_mgkhq")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_lf1cq"]
+material = SubResource("StandardMaterial3D_mgkhq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgqrg"]
+
+[sub_resource type="Environment" id="Environment_w57dt"]
+
+[node name="devmap" type="Node3D" unique_id=812905285]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1291390476]
+transform = Transform3D(14, 0, 0, 0, 1, 0, 0, 0, 3, -1.4042611, 0, 6.944047)
+
+[node name="floorvisual" type="MeshInstance3D" parent="floor" unique_id=1063543385]
+mesh = SubResource("BoxMesh_lf1cq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=205593323]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="floor2" type="StaticBody3D" parent="." unique_id=1727554040]
+transform = Transform3D(14, 0, 0, 0, 1, 0, 0, 0, 3, -1.4042611, 0, 6.944047)
+
+[node name="floorvisual" type="MeshInstance3D" parent="floor2" unique_id=1017359855]
+mesh = SubResource("BoxMesh_lf1cq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor2" unique_id=402431435]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="plataforma" type="StaticBody3D" parent="." unique_id=716113061]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 15.554642, 0, -1.5563574)
+
+[node name="floorvisual" type="MeshInstance3D" parent="plataforma" unique_id=1824745901]
+mesh = SubResource("BoxMesh_lf1cq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plataforma" unique_id=1896438820]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="plataforma2" type="StaticBody3D" parent="." unique_id=1801180014]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 20, 26.022064, 9.559241, -1.66854)
+
+[node name="floorvisual" type="MeshInstance3D" parent="plataforma2" unique_id=2058614952]
+mesh = SubResource("BoxMesh_lf1cq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plataforma2" unique_id=425420936]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="plataforma3" type="StaticBody3D" parent="." unique_id=39282083]
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 17.918985, 5.1892147, 9.559241, -3.3786259)
+
+[node name="floorvisual" type="MeshInstance3D" parent="plataforma3" unique_id=2112828638]
+mesh = SubResource("BoxMesh_lf1cq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plataforma3" unique_id=754397193]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="plataforma4" type="StaticBody3D" parent="." unique_id=2051289034]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 1, 15.618643, 9.559241, -12.052561)
+
+[node name="floorvisual" type="MeshInstance3D" parent="plataforma4" unique_id=1104063037]
+mesh = SubResource("BoxMesh_lf1cq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plataforma4" unique_id=1448967153]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="plataforma5" type="StaticBody3D" parent="." unique_id=2014571718]
+transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 30, 15.820948, 18.793888, -2.3063583)
+
+[node name="floorvisual" type="MeshInstance3D" parent="plataforma5" unique_id=2111512807]
+mesh = SubResource("BoxMesh_lf1cq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plataforma5" unique_id=1767121018]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="Camera3D" parent="." unique_id=1006619034 node_paths=PackedStringArray("player") instance=ExtResource("1_5pxp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.064855, 2.3850625, 12.960536)
+environment = SubResource("Environment_w57dt")
+fov = 60.0
+far = 100.0
+player = NodePath("../CharacterBody3D")
+follow_z = false
+deadzone_x = 2.0
+
+[node name="CharacterBody3D" parent="." unique_id=1739415868 instance=ExtResource("2_rvtnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.145845, 1, 7.862746)
+
+[node name="trigger" parent="." unique_id=1904376591 node_paths=PackedStringArray("target_camera", "player") instance=ExtResource("3_gynv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057223797, 1.0015948, 7.0225096)
+target_camera = NodePath("../Camera3D")
+player = NodePath("../CharacterBody3D")
+
+[node name="CanvasLayer" parent="." unique_id=1079664133 instance=ExtResource("6_tcmp5")]
+
+[node name="NPCTEST" parent="." unique_id=468218978 instance=ExtResource("7_cblfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.626812, 1, 7.095035)
+
+[node name="Door" parent="." unique_id=1485104025 instance=ExtResource("8_xxujv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.0131173, 13.863433, 1.0383844, 6.7735395)
+next_scene = "uid://byqv28xagk22f"
+
+[node name="notebook_low" parent="." unique_id=443678367 instance=ExtResource("9_ceyob")]
+transform = Transform3D(-0.9999572, 0, -0.009251505, 0, 1, 0, 0.009251505, 0, -0.9999572, 12.909534, 0.6536143, 7.2298274)

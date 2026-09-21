@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://b1hjycwmv4mo6"]
+
+[ext_resource type="Shader" uid="uid://bjc4wrnl70q63" path="res://shaders/mundo/mundo.gdshader" id="1_eud1l"]
+[ext_resource type="Texture2D" uid="uid://cq6xdwusaggbs" path="res://floortest.png" id="2_o117o"]
+[ext_resource type="Texture2D" uid="uid://sxxqm5dots6v" path="res://texturas/default/default1.png" id="3_lsilm"]
+[ext_resource type="Texture2D" uid="uid://dsv6w2w2n1nqf" path="res://IMG_20260919_150452519_MP.webp" id="4_lsilm"]
+[ext_resource type="Shader" uid="uid://b8th8u8ocsume" path="res://shaders/crt/crt_shader.gdshader" id="4_qw7s1"]
+[ext_resource type="Texture2D" uid="uid://b7wfw1e7o5kpl" path="res://shaders/crt/mult.png" id="5_agu3s"]
+[ext_resource type="Texture2D" uid="uid://bjb0a81rptx4l" path="res://shaders/crt/overlay.png" id="6_cyjce"]
+[ext_resource type="Texture2D" uid="uid://btcu35m23egeb" path="res://shaders/crt/squig.png" id="7_60ojs"]
+[ext_resource type="Shader" uid="uid://cx0alu0vy8igi" path="res://shaders/crt/bordes.gdshader" id="8_pvw6u"]
+[ext_resource type="ArrayMesh" uid="uid://qqqciwnpoiti" path="res://test/SYMSPY.MOM_160.obj" id="9_o117o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4jx24"]
+render_priority = 0
+shader = ExtResource("1_eud1l")
+shader_parameter/albedo_texture = ExtResource("2_o117o")
+shader_parameter/uv1_projection_mode = 0
+shader_parameter/uv1_scale = Vector2(1, 1)
+shader_parameter/uv1_offset = Vector2(0, 0)
+shader_parameter/enable_repeat = true
+shader_parameter/texture_pixelation = 32.0
+shader_parameter/color_levels = 16
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgqrg"]
+material = SubResource("ShaderMaterial_4jx24")
+size = Vector3(12.209026, 1, 20.375015)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nc355"]
+render_priority = 0
+shader = ExtResource("1_eud1l")
+shader_parameter/albedo_texture = ExtResource("3_lsilm")
+shader_parameter/uv1_projection_mode = 0
+shader_parameter/uv1_scale = Vector2(1, 1)
+shader_parameter/uv1_offset = Vector2(0, 0)
+shader_parameter/enable_repeat = true
+shader_parameter/texture_pixelation = 32.0
+shader_parameter/color_levels = 16
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jx24"]
+material = SubResource("ShaderMaterial_nc355")
+size = Vector3(13.160778, 4.898843, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_donmo"]
+render_priority = 0
+shader = ExtResource("1_eud1l")
+shader_parameter/albedo_texture = ExtResource("4_lsilm")
+shader_parameter/uv1_projection_mode = 1
+shader_parameter/uv1_scale = Vector2(1, 1)
+shader_parameter/uv1_offset = Vector2(0, 0)
+shader_parameter/enable_repeat = true
+shader_parameter/texture_pixelation = 32.0
+shader_parameter/color_levels = 16
+
+[sub_resource type="BoxMesh" id="BoxMesh_nc355"]
+material = SubResource("ShaderMaterial_donmo")
+size = Vector3(1, 5.1636047, 20.109934)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxr3i"]
+shader = ExtResource("4_qw7s1")
+shader_parameter/mult = ExtResource("5_agu3s")
+shader_parameter/squig = ExtResource("7_60ojs")
+shader_parameter/overlay = ExtResource("6_cyjce")
+shader_parameter/squiginv = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmhei"]
+shader = ExtResource("8_pvw6u")
+shader_parameter/distortion = 1.0
+shader_parameter/distort = false
+shader_parameter/border = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nc355"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_cover_modulate = Color(0, 0, 0, 1)
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_4jx24"]
+sky_material = SubResource("ProceduralSkyMaterial_nc355")
+
+[sub_resource type="Environment" id="Environment_bgqrg"]
+background_mode = 2
+sky = SubResource("Sky_4jx24")
+ambient_light_energy = 16.0
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.2824
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5sm2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="TESTWORLD" type="Node3D" unique_id=958281910]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=139840990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8407459, 0, -4.9482193)
+mesh = SubResource("BoxMesh_bgqrg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1688067227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5724735, 2.5282311, -15.460084)
+mesh = SubResource("BoxMesh_4jx24")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1489610779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.661479, 2.5275936, -4.9688435)
+mesh = SubResource("BoxMesh_nc355")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1384598066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.361891, 2.5520482, -4.9509153)
+mesh = SubResource("BoxMesh_nc355")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1621555481]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1619844494]
+texture_filter = 1
+material = SubResource("ShaderMaterial_dxr3i")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=458453193]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2" unique_id=176691928]
+texture_filter = 1
+texture_repeat = 1
+material = SubResource("ShaderMaterial_qmhei")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1202031191]
+environment = SubResource("Environment_bgqrg")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1818588389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.00145, 1.5387926)
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=1332254352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0870037, 3.6437926, -3.4280555)
+light_energy = 2.669
+light_indirect_energy = 2.094
+area_range = 126.571
+area_attenuation = 0.409
+area_size = Vector2(6.8778, 6.135893)
+
+[node name="Symspy_mom160" type="MeshInstance3D" parent="." unique_id=1459791032]
+transform = Transform3D(0.001259192, 0, 0, 0, -1.942511e-05, 0.0011608525, 0, -0.00088065333, -2.5605641e-05, 0.8619528, 0.50369567, -12.220532)
+material_override = SubResource("StandardMaterial3D_m5sm2")
+mesh = ExtResource("9_o117o")

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://48nijan6xo5p"]
+
+[ext_resource type="Script" uid="uid://bd5dr7ekulm51" path="res://scripts/entidades/player.gd" id="1_le3lr"]
+[ext_resource type="Texture2D" uid="uid://sxxqm5dots6v" path="res://texturas/default/default1.png" id="2_11m8g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_11m8g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvtnt"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_le3lr"]
+
+[node name="player" type="CharacterBody3D" unique_id=1739415868 groups=["Player"]]
+script = ExtResource("1_le3lr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1197465764]
+visible = false
+mesh = SubResource("BoxMesh_11m8g")
+surface_material_override/0 = SubResource("StandardMaterial3D_rvtnt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1378577540]
+shape = SubResource("BoxShape3D_le3lr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=623499540]
+light_energy = 0.89
+light_indirect_energy = 0.0
+omni_range = 29.9
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1242406946]
+texture = ExtResource("2_11m8g")

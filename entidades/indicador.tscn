@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bq28ue7wcfn1x"]
+
+[ext_resource type="Script" uid="uid://bpma0u26gq7v2" path="res://scripts/entidades/indicador.gd" id="1_jmwlg"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_bgqrg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bgqrg"]
+
+[node name="INDICADOR" type="Area3D" unique_id=1085329776]
+script = ExtResource("1_jmwlg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=703910409]
+transform = Transform3D(-0.9999342, -0.011472125, 0, 0.011472125, -0.9999342, 0, 0, 0, 1, 0, 1.4652038, 0)
+mesh = SubResource("PrismMesh_bgqrg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2048091929]
+transform = Transform3D(3.0691502, 0, 0, 0, 2.022026, 0, 0, 0, 3.7281163, 0, 0, 0)
+shape = SubResource("SphereShape3D_bgqrg")

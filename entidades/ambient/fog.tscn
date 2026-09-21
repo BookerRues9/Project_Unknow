@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dldo42yjuvcg4"]
+
+[sub_resource type="Environment" id="Environment_bgqrg"]
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+fog_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=370419886]
+environment = SubResource("Environment_bgqrg")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dv6q2w4ist1ju"]
+
+[ext_resource type="Script" uid="uid://dh5a4bx0xy7fo" path="res://scripts/entidades/trigger.gd" id="1_r2v0j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgqrg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2v0j"]
+albedo_color = Color(0.9999997, 0.39113393, 0.10272773, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgqrg"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_r2v0j")
+
+[node name="trigger" type="Area3D" unique_id=1904376591]
+script = ExtResource("1_r2v0j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1367934783]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=311325854]
+mesh = SubResource("BoxMesh_bgqrg")
+
+[node name="CameraMarker" type="Marker3D" parent="." unique_id=1328094790]

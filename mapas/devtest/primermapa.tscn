@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cbl0o8jnrvdrt"]
+
+[ext_resource type="Texture2D" uid="uid://diywqwfumhnot" path="res://texturas/default/default7.png" id="1_lt82j"]
+[ext_resource type="Shader" path="res://shaders/psx_retro_shader.gdshader" id="1_nfdce"]
+[ext_resource type="Texture2D" path="res://shaders/test.png" id="2_6oing"]
+[ext_resource type="PackedScene" uid="uid://xuwunqxmbfnp" path="res://models/bed/cama.glb" id="2_n0yds"]
+[ext_resource type="Texture2D" uid="uid://yu3hvjy873cs" path="res://texturas/default/default3.png" id="3_xjld1"]
+[ext_resource type="PackedScene" uid="uid://bpjevy84k8tqa" path="res://entidades/camara.tscn" id="4_xjld1"]
+[ext_resource type="PackedScene" uid="uid://s2nqpbo6kfx3" path="res://models/arbol/arbolito.glb" id="6_xdmfx"]
+[ext_resource type="PackedScene" uid="uid://c2d2nj2lvt1y0" path="res://models/easter/easter.glb" id="7_errej"]
+[ext_resource type="PackedScene" uid="uid://cfuo7ekp5nis7" path="res://entidades/dev/UI/DebugUI.tscn" id="9_6oing"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgqrg"]
+render_priority = 0
+shader = ExtResource("1_nfdce")
+shader_parameter/texture_albedo = ExtResource("2_6oing")
+shader_parameter/jitter_intensity = 160.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0c4e"]
+albedo_texture = ExtResource("1_lt82j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qpayu"]
+material = SubResource("StandardMaterial3D_w0c4e")
+size = Vector2(1, 1)
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_iybsm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jx24"]
+size = Vector3(2.9541016, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgqrg"]
+albedo_texture = ExtResource("3_xjld1")
+
+[node name="Primermapa" type="Node3D" unique_id=239844482]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1196495365]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=750615136]
+material = SubResource("ShaderMaterial_bgqrg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="pisito" type="StaticBody3D" parent="." unique_id=347132172]
+transform = Transform3D(7.0565577, 0, 0, 0, 1, 0, 0, 0, 4.671953, 0, 0, 0)
+
+[node name="visual" type="MeshInstance3D" parent="pisito" unique_id=8578678]
+mesh = SubResource("PlaneMesh_qpayu")
+
+[node name="colision" type="CollisionShape3D" parent="pisito" unique_id=1043753905]
+shape = SubResource("HeightMapShape3D_iybsm")
+debug_color = Color(0.019607844, 0, 1, 1)
+
+[node name="cama" parent="." unique_id=1229608622 instance=ExtResource("2_n0yds")]
+transform = Transform3D(0.6661948, 0, 0, 0, 0.7606877, 0, 0, 0, 0.8227404, -2.742226, -1.4240507, 2.1678293)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=170533157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009277344, 0.50753593, -1.8082495)
+mesh = SubResource("BoxMesh_4jx24")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1657586829]
+transform = Transform3D(2.0223193, 0, 0, 0, 1, 0, 0, 0, 1, -0.5401844, 4.8697953, -0.3275218)
+operation = 2
+flip_faces = true
+size = Vector3(6.8518367, 11.392395, 12.799292)
+material = SubResource("StandardMaterial3D_bgqrg")
+
+[node name="maincamera" parent="." unique_id=1006619034 instance=ExtResource("4_xjld1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17581737, 1.1036534, 2.3244438)
+
+[node name="arbolito" parent="." unique_id=266888959 instance=ExtResource("6_xdmfx")]
+transform = Transform3D(0.6942963, 0, 0, 0, 0.63551944, 0, 0, 0, 0.8812555, -1.1502655, 0.33029246, -0.62199044)
+
+[node name="TMCM_qc" parent="." unique_id=292946331 instance=ExtResource("7_errej")]
+transform = Transform3D(0.017895246, 0, 0, 0, 0.018446516, 0, 0, 0, 0.018984137, 0.15712106, 0, -1.0032098)
+
+[node name="debugUI" parent="." unique_id=1079664133 instance=ExtResource("9_6oing")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1915904459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024501562, 2.0407481, 2.054195)
+light_energy = 2.597
+sky_mode = 1

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bjnry3jbxa7b7"]
+
+[ext_resource type="Script" uid="uid://did5vajwjijok" path="res://scripts/entidades/door.gd" id="1_n8g2d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m8b7o"]
+
+[node name="Door" type="Area3D" unique_id=1485104025]
+script = ExtResource("1_n8g2d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=254588642]
+shape = SubResource("BoxShape3D_m8b7o")
+debug_color = Color(0.96151835, 4.4520943e-06, 9.62615e-07, 0.41960785)

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://byqv28xagk22f"]
+
+[ext_resource type="PackedScene" uid="uid://bpjevy84k8tqa" path="res://entidades/camara.tscn" id="1_lfl6h"]
+[ext_resource type="PackedScene" uid="uid://btb5ef8e0im4y" path="res://entidades/ambient/ambiente1.tscn" id="2_6u2df"]
+
+[node name="Mapa2" type="Node3D" unique_id=1611204020]
+
+[node name="maincamera" parent="." unique_id=1006619034 instance=ExtResource("1_lfl6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9022677, 0, 0.9571848)
+
+[node name="ambiente1" parent="." unique_id=1174997606 instance=ExtResource("2_6u2df")]

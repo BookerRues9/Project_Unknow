@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://bc4q1gamgwsmi"]
+
+[ext_resource type="Script" uid="uid://bcci6ifkjocl4" path="res://scripts/menu/MainMenu.gd" id="1_a07rg"]
+[ext_resource type="SystemFont" uid="uid://dvut0erh1gq4w" path="res://fuentes/font1.tres" id="2_ih41u"]
+[ext_resource type="Texture2D" uid="uid://dgguek1yvab63" path="res://texturas/textbox.png" id="2_pdevs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huh3c"]
+bg_color = Color(0.9075171, 0.46038902, 9.62615e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ndxs"]
+bg_color = Color(7.2196127e-07, 0.721137, 0.31152877, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ih41u"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdevs"]
+bg_color = Color(1, 0.31392977, 0.45452762, 1)
+
+[sub_resource type="Theme" id="Theme_bgqrg"]
+default_font = ExtResource("2_ih41u")
+Button/styles/focus = SubResource("StyleBoxFlat_huh3c")
+Button/styles/hover = SubResource("StyleBoxFlat_7ndxs")
+Button/styles/normal = SubResource("StyleBoxTexture_ih41u")
+Button/styles/pressed = SubResource("StyleBoxFlat_pdevs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pdevs"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="SystemFont" id="SystemFont_pdevs"]
+font_names = PackedStringArray("Dot Matrix")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqfmj"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cs1gt"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s5uv"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ndxs"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3q5g"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_huh3c"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_infbk"]
+texture = ExtResource("2_pdevs")
+
+[sub_resource type="Theme" id="Theme_pdevs"]
+Button/styles/focus = SubResource("StyleBoxTexture_pdevs")
+TabBar/fonts/font = SubResource("SystemFont_pdevs")
+TabBar/styles/button_highlight = SubResource("StyleBoxTexture_dqfmj")
+TabBar/styles/button_pressed = SubResource("StyleBoxTexture_cs1gt")
+TabBar/styles/tab_disabled = SubResource("StyleBoxTexture_7s5uv")
+TabBar/styles/tab_focus = SubResource("StyleBoxTexture_7ndxs")
+TabBar/styles/tab_hovered = SubResource("StyleBoxTexture_d3q5g")
+TabBar/styles/tab_selected = SubResource("StyleBoxTexture_huh3c")
+TabBar/styles/tab_unselected = SubResource("StyleBoxTexture_infbk")
+
+[node name="MainMenu" type="Node3D" unique_id=1372832416]
+
+[node name="MainMenu" type="Control" parent="." unique_id=450123750]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a07rg")
+
+[node name="MainOptionsContainer" type="Control" parent="MainMenu" unique_id=420083962]
+anchors_preset = 0
+offset_right = 301.0
+offset_bottom = 275.0
+
+[node name="start" type="Button" parent="MainMenu/MainOptionsContainer" unique_id=1029402008]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 42.0
+offset_right = 327.0
+offset_bottom = 116.0
+disabled = true
+text = "New Game"
+
+[node name="resume" type="Button" parent="MainMenu/MainOptionsContainer" unique_id=1592759359]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 147.0
+offset_right = 354.0
+offset_bottom = 233.0
+text = "Resume"
+
+[node name="settings" type="Button" parent="MainMenu/MainOptionsContainer" unique_id=1827299672]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 251.0
+offset_right = 353.0
+offset_bottom = 326.0
+text = "Settings"
+
+[node name="exit" type="Button" parent="MainMenu/MainOptionsContainer" unique_id=293990393]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 342.0
+offset_right = 365.0
+offset_bottom = 419.0
+theme = SubResource("Theme_bgqrg")
+text = "Exit"
+
+[node name="SettingsContainer" type="Control" parent="MainMenu" unique_id=390588860]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="MainMenu/SettingsContainer" unique_id=1149201862]
+layout_mode = 0
+offset_right = 955.0
+offset_bottom = 539.0
+theme = SubResource("Theme_pdevs")
+current_tab = 0
+
+[node name="Graficos" type="Control" parent="MainMenu/SettingsContainer/TabContainer" unique_id=185232137]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="FilaRes" type="HBoxContainer" parent="MainMenu/SettingsContainer/TabContainer/Graficos" unique_id=1576181090]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 26.0
+offset_right = 413.0
+offset_bottom = 73.0
+
+[node name="resolucionname" type="Label" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRes" unique_id=2048785263]
+layout_mode = 2
+text = "resolucion"
+horizontal_alignment = 1
+
+[node name="original" type="Button" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRes" unique_id=551713437]
+layout_mode = 2
+text = "<"
+
+[node name="ValResolucion" type="Label" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRes" unique_id=1528429674]
+layout_mode = 2
+text = "960x540"
+
+[node name="original2" type="Button" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRes" unique_id=526914181]
+layout_mode = 2
+text = ">"
+
+[node name="FilaRender" type="HBoxContainer" parent="MainMenu/SettingsContainer/TabContainer/Graficos" unique_id=767680356]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 81.0
+offset_right = 308.0
+offset_bottom = 121.0
+
+[node name="Label" type="Label" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRender" unique_id=2048398683]
+layout_mode = 2
+text = "renderer"
+
+[node name="cambio" type="Button" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRender" unique_id=291293415]
+layout_mode = 2
+text = "<"
+
+[node name="ValRenderizador" type="Label" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRender" unique_id=2072863635]
+layout_mode = 2
+text = "opengl"
+
+[node name="cambio2" type="Button" parent="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRender" unique_id=873676883]
+layout_mode = 2
+text = ">"
+
+[node name="Tab Controles" type="Control" parent="MainMenu/SettingsContainer/TabContainer" unique_id=1632161953]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Tab Otros" type="Control" parent="MainMenu/SettingsContainer/TabContainer" unique_id=439938302]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="SaveAndBackButton" type="Button" parent="MainMenu/SettingsContainer" unique_id=1618818361]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 445.0
+offset_right = 271.0
+offset_bottom = 536.0
+text = "EXIT"
+
+[connection signal="pressed" from="MainMenu/MainOptionsContainer/start" to="MainMenu" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/MainOptionsContainer/resume" to="MainMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="MainMenu/MainOptionsContainer/settings" to="MainMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu/MainOptionsContainer/exit" to="MainMenu" method="_on_exit_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRes/original" to="MainMenu" method="_on_btn_res_izq_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRes/original2" to="MainMenu" method="_on_btn_res_der_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRes/original2" to="MainMenu" method="actualizar_texto_resolucion"]
+[connection signal="pressed" from="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRender/cambio" to="MainMenu" method="_on_btn_rend_izq_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsContainer/TabContainer/Graficos/FilaRender/cambio2" to="MainMenu" method="_on_btn_rend_der_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsContainer/SaveAndBackButton" to="MainMenu" method="_on_save_and_back_pressed"]

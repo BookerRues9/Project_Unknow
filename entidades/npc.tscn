@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dfh41kk4wkn7f"]
+
+[ext_resource type="PackedScene" uid="uid://bq28ue7wcfn1x" path="res://entidades/indicador.tscn" id="1_0077i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jx24"]
+albedo_color = Color(0.92819023, 4.5242905e-06, 0.5575245, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgqrg"]
+material = SubResource("StandardMaterial3D_4jx24")
+
+[node name="NPCTEST" type="CharacterBody3D" unique_id=468218978]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=944348072]
+mesh = SubResource("BoxMesh_bgqrg")
+
+[node name="INDICADOR" parent="." unique_id=1085329776 instance=ExtResource("1_0077i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033318937, 0, -0.08944178)

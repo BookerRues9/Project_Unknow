@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://c7tvcoojy6fls"]
+
+[ext_resource type="Shader" uid="uid://bjc4wrnl70q63" path="res://shaders/mundo/mundo.gdshader" id="1_movfo"]
+[ext_resource type="Shader" uid="uid://b8th8u8ocsume" path="res://shaders/crt/crt_shader.gdshader" id="2_li7c4"]
+[ext_resource type="Texture2D" uid="uid://co1rcxrl8ui88" path="res://texturas/sprite-30mm-artificial-grass-far_1280x1280.jpg" id="2_movfo"]
+[ext_resource type="Texture2D" uid="uid://b7wfw1e7o5kpl" path="res://shaders/crt/mult.png" id="3_p4bue"]
+[ext_resource type="Texture2D" uid="uid://bjb0a81rptx4l" path="res://shaders/crt/overlay.png" id="4_qdfbv"]
+[ext_resource type="Texture2D" uid="uid://btcu35m23egeb" path="res://shaders/crt/squig.png" id="5_4sh6q"]
+[ext_resource type="PackedScene" uid="uid://c2d2nj2lvt1y0" path="res://models/easter/easter.glb" id="5_p4bue"]
+[ext_resource type="Shader" uid="uid://cx0alu0vy8igi" path="res://shaders/crt/bordes.gdshader" id="7_1mq4w"]
+[ext_resource type="PackedScene" uid="uid://cfuo7ekp5nis7" path="res://entidades/dev/UI/DebugUI.tscn" id="9_movfo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbbie"]
+render_priority = 0
+shader = ExtResource("1_movfo")
+shader_parameter/albedo_texture = ExtResource("2_movfo")
+shader_parameter/jitter_intensity = 0.5
+shader_parameter/color_levels = 16
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgqrg"]
+material = SubResource("ShaderMaterial_fbbie")
+size = Vector3(7.101013, 1, 8.555237)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgqrg"]
+shader = ExtResource("2_li7c4")
+shader_parameter/mult = ExtResource("3_p4bue")
+shader_parameter/squig = ExtResource("5_4sh6q")
+shader_parameter/overlay = ExtResource("4_qdfbv")
+shader_parameter/squiginv = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4sh6q"]
+shader = ExtResource("7_1mq4w")
+shader_parameter/distortion = 0.1210000057475
+shader_parameter/distort = false
+shader_parameter/border = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nc355"]
+
+[sub_resource type="Sky" id="Sky_4jx24"]
+sky_material = SubResource("ProceduralSkyMaterial_nc355")
+
+[sub_resource type="Environment" id="Environment_bgqrg"]
+background_mode = 2
+sky = SubResource("Sky_4jx24")
+
+[node name="ShaderTest" type="Node3D" unique_id=2000472884]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1670615002]
+transform = Transform3D(1, 0, 0, 0, 0.95096564, 0.30929646, 0, -0.30929646, 0.95096564, 0, 0.9722686, 1.841572)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=822725787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5753479, -0.3648169, -2.7327023)
+mesh = SubResource("BoxMesh_bgqrg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1229912490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5753479, 4.10962, -2.7327023)
+mesh = SubResource("BoxMesh_bgqrg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1083553031]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=95512035]
+texture_filter = 1
+material = SubResource("ShaderMaterial_bgqrg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1468170406]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2" unique_id=613496261]
+texture_filter = 1
+texture_repeat = 1
+material = SubResource("ShaderMaterial_4sh6q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TMCM_qc" parent="." unique_id=292946331 instance=ExtResource("5_p4bue")]
+transform = Transform3D(0.0090145795, 0, 0, 0, 0.008227626, 0, 0, 0, 0.00885112, 0.0076642036, 0.13828146, 0.18421733)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1828428027]
+environment = SubResource("Environment_bgqrg")
+
+[node name="debugUI" parent="." unique_id=1079664133 instance=ExtResource("9_movfo")]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://8q0u1y6isl1c"]
+
+[ext_resource type="Script" uid="uid://bex73wuqtfobn" path="res://scripts/entidades/enemy.gd" id="1_jb646"]
+[ext_resource type="Texture2D" uid="uid://cqpkrugbtkaro" path="res://texturas/default/default4.png" id="2_8vd5i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jx24"]
+albedo_texture = ExtResource("2_8vd5i")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgqrg"]
+material = SubResource("StandardMaterial3D_4jx24")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgqrg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4jx24"]
+size = Vector3(1.4194336, 1, 1.470581)
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1512079727]
+script = ExtResource("1_jb646")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1144249911]
+mesh = SubResource("BoxMesh_bgqrg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1346269436]
+shape = SubResource("BoxShape3D_bgqrg")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1343869268]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1977798951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025146484, 0, 0.014587402)
+shape = SubResource("BoxShape3D_4jx24")
