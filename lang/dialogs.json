@@ -1,0 +1,10 @@
+{
+  "setting_video": "Configuración de Video",
+  "setting_audio": "Volumen de Audio",
+  "npc_guard_1": "Alto ahí, viajero... Este lugar no es seguro para alguien como tú.",
+  "npc_guard_2": "¿Tienes la llave oxidada? Ni lo intentes buscar sin ella.",
+  "computer_log_01": "[REGISTRO #404]: El sistema de ventilación ha fallado de nuevo.",
+  "npc_warning": "Cuidado... [color=red]algo se acerca[/color] por el pasillo oscuro.WEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\nxddddddd",
+  "rainbow_text": "[wave amp=50 freq=5]¡Esto es un efecto psicodélico retro![/wave]",
+  "solid_color": "[color=#00ff55]Texto completamente verde brillante de una sola tonalidad.[/color]"
+}

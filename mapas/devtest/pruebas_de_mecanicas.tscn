@@ -9,14 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://bjb0a81rptx4l" path="res://shaders/crt/overlay.png" id="7_p7kfh"]
 [ext_resource type="Texture2D" uid="uid://btcu35m23egeb" path="res://shaders/crt/squig.png" id="8_qnvae"]
 [ext_resource type="Shader" uid="uid://cx0alu0vy8igi" path="res://shaders/crt/bordes.gdshader" id="9_xmrnk"]
+[ext_resource type="PackedScene" uid="uid://dfh41kk4wkn7f" path="res://entidades/npc.tscn" id="10_tvnqn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dah16"]
 render_priority = 0
 shader = ExtResource("1_713ei")
 shader_parameter/albedo_texture = ExtResource("1_cekkc")
+shader_parameter/uv1_projection_mode = 0
 shader_parameter/uv1_scale = Vector2(1, 1)
 shader_parameter/uv1_offset = Vector2(1, 1)
-shader_parameter/jitter_intensity = 0.194000009215
+shader_parameter/enable_repeat = true
+shader_parameter/texture_pixelation = 32.0
 shader_parameter/color_levels = 16
 
 [sub_resource type="BoxMesh" id="BoxMesh_bgqrg"]
@@ -646,3 +649,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="NPCTEST" parent="." unique_id=468218978 instance=ExtResource("10_tvnqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2214794, 0.47000003, -12.789586)

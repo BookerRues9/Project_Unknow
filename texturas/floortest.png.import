@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boqe62e65f11f"
-path.s3tc="res://.godot/imported/pussy.png-902a0cd28f2639a7379001095fc9d61a.s3tc.ctex"
-path.etc2="res://.godot/imported/pussy.png-902a0cd28f2639a7379001095fc9d61a.etc2.ctex"
+uid="uid://cq6xdwusaggbs"
+path.s3tc="res://.godot/imported/floortest.png-5087349ec73a8c7a905d8b6b31614046.s3tc.ctex"
+path.etc2="res://.godot/imported/floortest.png-5087349ec73a8c7a905d8b6b31614046.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://pussy.png"
-dest_files=["res://.godot/imported/pussy.png-902a0cd28f2639a7379001095fc9d61a.s3tc.ctex", "res://.godot/imported/pussy.png-902a0cd28f2639a7379001095fc9d61a.etc2.ctex"]
+source_file="res://texturas/floortest.png"
+dest_files=["res://.godot/imported/floortest.png-5087349ec73a8c7a905d8b6b31614046.s3tc.ctex", "res://.godot/imported/floortest.png-5087349ec73a8c7a905d8b6b31614046.etc2.ctex"]
 
 [params]
 

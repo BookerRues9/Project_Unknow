@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cl1yo2s3vj8n4"]
+
+[ext_resource type="Script" uid="uid://7ps7dhheri5f" path="res://scripts/utils/textbox.gd" id="1_wnbxk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jx24"]
+bg_color = Color(0.0017346075, 0.0011168771, 0.010307376, 1)
+border_width_left = 13
+border_width_top = 9
+border_width_right = 11
+border_width_bottom = 14
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="SystemFont" id="SystemFont_bgqrg"]
+font_names = PackedStringArray("Sans-Serif")
+
+[node name="Textbox" type="CanvasLayer" unique_id=1858132953]
+script = ExtResource("1_wnbxk")
+
+[node name="Control" type="Control" parent="." unique_id=1594213254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=615668228]
+custom_minimum_size = Vector2(800, 150)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -180.0
+offset_right = 400.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_position = Vector2(0, -50)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4jx24")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer" unique_id=1579110614]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer/MarginContainer" unique_id=1109486290]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_bgqrg")
+text = "hola papi"
+fit_content = true
+scroll_active = false

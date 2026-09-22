@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsv6w2w2n1nqf"
-path.s3tc="res://.godot/imported/IMG_20260919_150452519_MP.webp-e9d29cfc60d36d9a83dbb8f42347f1ab.s3tc.ctex"
-path.etc2="res://.godot/imported/IMG_20260919_150452519_MP.webp-e9d29cfc60d36d9a83dbb8f42347f1ab.etc2.ctex"
+uid="uid://boqe62e65f11f"
+path.s3tc="res://.godot/imported/pussy.png-880dcd325fd30491799de32908347bc9.s3tc.ctex"
+path.etc2="res://.godot/imported/pussy.png-880dcd325fd30491799de32908347bc9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://IMG_20260919_150452519_MP.webp"
-dest_files=["res://.godot/imported/IMG_20260919_150452519_MP.webp-e9d29cfc60d36d9a83dbb8f42347f1ab.s3tc.ctex", "res://.godot/imported/IMG_20260919_150452519_MP.webp-e9d29cfc60d36d9a83dbb8f42347f1ab.etc2.ctex"]
+source_file="res://texturas/pussy.png"
+dest_files=["res://.godot/imported/pussy.png-880dcd325fd30491799de32908347bc9.s3tc.ctex", "res://.godot/imported/pussy.png-880dcd325fd30491799de32908347bc9.etc2.ctex"]
 
 [params]
 

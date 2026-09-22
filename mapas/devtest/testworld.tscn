@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b1hjycwmv4mo6"]
 
 [ext_resource type="Shader" uid="uid://bjc4wrnl70q63" path="res://shaders/mundo/mundo.gdshader" id="1_eud1l"]
-[ext_resource type="Texture2D" uid="uid://cq6xdwusaggbs" path="res://floortest.png" id="2_o117o"]
+[ext_resource type="Texture2D" uid="uid://cq6xdwusaggbs" path="res://texturas/floortest.png" id="2_o117o"]
 [ext_resource type="Texture2D" uid="uid://sxxqm5dots6v" path="res://texturas/default/default1.png" id="3_lsilm"]
-[ext_resource type="Texture2D" uid="uid://dsv6w2w2n1nqf" path="res://IMG_20260919_150452519_MP.webp" id="4_lsilm"]
+[ext_resource type="Texture2D" uid="uid://dsv6w2w2n1nqf" path="res://texturas/wall.webp" id="4_lsilm"]
 [ext_resource type="Shader" uid="uid://b8th8u8ocsume" path="res://shaders/crt/crt_shader.gdshader" id="4_qw7s1"]
 [ext_resource type="Texture2D" uid="uid://b7wfw1e7o5kpl" path="res://shaders/crt/mult.png" id="5_agu3s"]
 [ext_resource type="Texture2D" uid="uid://bjb0a81rptx4l" path="res://shaders/crt/overlay.png" id="6_cyjce"]

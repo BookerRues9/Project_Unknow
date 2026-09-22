@@ -34,3 +34,11 @@ func _on_body_exited(body: Node3D) -> void:
 		if indicator:
 			indicator.visible = false
 			time_passed = 0.0 # Reinicia el tiempo para el próximo rebote
+			
+			
+
+@export var npc_dialog_key: String = "npc_warning"
+
+func interact() -> void:
+	# El manager se encarga de abrir la caja de texto automáticamente
+	DialogManager.start_dialog(npc_dialog_key)

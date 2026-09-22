@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bc4q1gamgwsmi"]
 
 [ext_resource type="Script" uid="uid://bcci6ifkjocl4" path="res://scripts/menu/MainMenu.gd" id="1_a07rg"]
+[ext_resource type="Script" uid="uid://oj16dlyhsfmh" path="res://scripts/utils/localized_button.gd" id="2_huh3c"]
 [ext_resource type="SystemFont" uid="uid://dvut0erh1gq4w" path="res://fuentes/font1.tres" id="2_ih41u"]
 [ext_resource type="Texture2D" uid="uid://dgguek1yvab63" path="res://texturas/textbox.png" id="2_pdevs"]
 
@@ -28,6 +29,7 @@ texture = ExtResource("2_pdevs")
 
 [sub_resource type="SystemFont" id="SystemFont_pdevs"]
 font_names = PackedStringArray("Dot Matrix")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqfmj"]
 texture = ExtResource("2_pdevs")
@@ -51,6 +53,7 @@ texture = ExtResource("2_pdevs")
 texture = ExtResource("2_pdevs")
 
 [sub_resource type="Theme" id="Theme_pdevs"]
+Button/colors/font_color = Color(0.5225939, 0.99999994, 0.5725469, 1)
 Button/styles/focus = SubResource("StyleBoxTexture_pdevs")
 TabBar/fonts/font = SubResource("SystemFont_pdevs")
 TabBar/styles/button_highlight = SubResource("StyleBoxTexture_dqfmj")
@@ -84,7 +87,8 @@ offset_top = 42.0
 offset_right = 327.0
 offset_bottom = 116.0
 disabled = true
-text = "New Game"
+script = ExtResource("2_huh3c")
+text_key = "button_start"
 
 [node name="resume" type="Button" parent="MainMenu/MainOptionsContainer" unique_id=1592759359]
 layout_mode = 0
@@ -93,6 +97,8 @@ offset_top = 147.0
 offset_right = 354.0
 offset_bottom = 233.0
 text = "Resume"
+script = ExtResource("2_huh3c")
+text_key = "button_resume"
 
 [node name="settings" type="Button" parent="MainMenu/MainOptionsContainer" unique_id=1827299672]
 layout_mode = 0
@@ -101,6 +107,8 @@ offset_top = 251.0
 offset_right = 353.0
 offset_bottom = 326.0
 text = "Settings"
+script = ExtResource("2_huh3c")
+text_key = "button_settings"
 
 [node name="exit" type="Button" parent="MainMenu/MainOptionsContainer" unique_id=293990393]
 layout_mode = 0
@@ -109,7 +117,8 @@ offset_top = 342.0
 offset_right = 365.0
 offset_bottom = 419.0
 theme = SubResource("Theme_bgqrg")
-text = "Exit"
+script = ExtResource("2_huh3c")
+text_key = "button_exit"
 
 [node name="SettingsContainer" type="Control" parent="MainMenu" unique_id=390588860]
 layout_mode = 1
